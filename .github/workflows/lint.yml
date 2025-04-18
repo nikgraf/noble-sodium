@@ -1,0 +1,14 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: Install dependencies
+        run: pnpm install
+      - name: prettier-check
+        run: npx prettier --check .

@@ -1,0 +1,15 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: install dependencies
+        run: pnpm install
+      - name: tests
+        run: pnpm test
