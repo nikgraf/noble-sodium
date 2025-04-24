@@ -40,13 +40,13 @@ it("should perform libsodium compatible box seal operations", async () => {
   const decrypted = sodium.crypto_box_seal_open(
     ciphertext,
     keyPairRecipient.publicKey,
-    keyPairRecipient.privateKey
+    keyPairRecipient.privateKey,
   );
   expect(decrypted).toEqual(message);
 
   const ciphertext2 = sodium.crypto_box_seal(
     message,
-    keyPairRecipient.publicKey
+    keyPairRecipient.publicKey,
   );
   const decrypted2 = cryptoBoxSealOpen({
     ciphertext: ciphertext2,

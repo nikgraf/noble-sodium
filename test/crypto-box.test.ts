@@ -65,7 +65,7 @@ it("should perform compatible box operations with libsodium", async () => {
     ciphertext,
     nonce,
     keyPairAuthor.publicKey,
-    keyPairRecipient.privateKey
+    keyPairRecipient.privateKey,
   );
   expect(decrypted).toEqual(message);
 
@@ -73,7 +73,7 @@ it("should perform compatible box operations with libsodium", async () => {
     message,
     nonce,
     keyPairRecipient.publicKey,
-    keyPairAuthor.privateKey
+    keyPairAuthor.privateKey,
   );
 
   expect(ciphertext).toEqual(ciphertext2);

@@ -30,21 +30,21 @@ export function crypto_box_easy(
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): Uint8Array;
 export function crypto_box_easy(
   message: string | Uint8Array,
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): string;
 export function crypto_box_easy(
   message: string | Uint8Array,
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): Uint8Array | string {
   if (typeof message === "string") {
     throw new Error("string message not supported");
@@ -65,13 +65,13 @@ export function crypto_box_easy(
 }
 
 export function crypto_box_keypair(
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): KeyPair;
 export function crypto_box_keypair(
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): StringKeyPair;
 export function crypto_box_keypair(
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): KeyPair | StringKeyPair {
   if (
     outputFormat === "hex" ||
@@ -88,21 +88,21 @@ export function crypto_box_open_easy(
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): Uint8Array;
 export function crypto_box_open_easy(
   ciphertext: string | Uint8Array,
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): string;
 export function crypto_box_open_easy(
   ciphertext: string | Uint8Array,
   nonce: Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): Uint8Array | string {
   if (typeof ciphertext === "string") {
     throw new Error("string ciphertext not supported");
@@ -125,17 +125,17 @@ export function crypto_box_open_easy(
 export function crypto_box_seal(
   message: string | Uint8Array,
   publicKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): Uint8Array;
 export function crypto_box_seal(
   message: string | Uint8Array,
   publicKey: Uint8Array,
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): string;
 export function crypto_box_seal(
   message: string | Uint8Array,
   publicKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): Uint8Array | string {
   if (typeof message === "string") {
     throw new Error("string message not supported");
@@ -157,19 +157,19 @@ export function crypto_box_seal_open(
   ciphertext: string | Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): Uint8Array;
 export function crypto_box_seal_open(
   ciphertext: string | Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): string;
 export function crypto_box_seal_open(
   ciphertext: string | Uint8Array,
   publicKey: Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): Uint8Array | string {
   if (typeof ciphertext === "string") {
     throw new Error("string ciphertext not supported");
@@ -189,13 +189,13 @@ export function crypto_box_seal_open(
 }
 
 export function crypto_sign_keypair(
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): KeyPair;
 export function crypto_sign_keypair(
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): StringKeyPair;
 export function crypto_sign_keypair(
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): KeyPair | StringKeyPair {
   if (
     outputFormat === "hex" ||
@@ -210,17 +210,17 @@ export function crypto_sign_keypair(
 export function crypto_sign_detached(
   message: string | Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | null,
 ): Uint8Array;
 export function crypto_sign_detached(
   message: string | Uint8Array,
   privateKey: Uint8Array,
-  outputFormat: StringOutputFormat
+  outputFormat: StringOutputFormat,
 ): string;
 export function crypto_sign_detached(
   message: string | Uint8Array,
   privateKey: Uint8Array,
-  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
+  outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null,
 ): Uint8Array | string {
   if (typeof message === "string") {
     throw new Error("string message not supported");
@@ -241,7 +241,7 @@ export function crypto_sign_detached(
 export function crypto_sign_verify_detached(
   signature: Uint8Array,
   message: string | Uint8Array,
-  publicKey: Uint8Array
+  publicKey: Uint8Array,
 ): boolean {
   if (typeof message === "string") {
     throw new Error("string message not supported");
