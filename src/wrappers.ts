@@ -49,7 +49,11 @@ export function crypto_box_easy(
   if (typeof message === "string") {
     throw new Error("string message not supported");
   }
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoBoxEasy({
@@ -69,7 +73,11 @@ export function crypto_box_keypair(
 export function crypto_box_keypair(
   outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
 ): KeyPair | StringKeyPair {
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoBoxKeyPair();
@@ -99,7 +107,11 @@ export function crypto_box_open_easy(
   if (typeof ciphertext === "string") {
     throw new Error("string ciphertext not supported");
   }
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoBoxOpenEasy({
@@ -128,7 +140,11 @@ export function crypto_box_seal(
   if (typeof message === "string") {
     throw new Error("string message not supported");
   }
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoBoxSeal({
@@ -158,7 +174,11 @@ export function crypto_box_seal_open(
   if (typeof ciphertext === "string") {
     throw new Error("string ciphertext not supported");
   }
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoBoxSealOpen({
@@ -177,7 +197,11 @@ export function crypto_sign_keypair(
 export function crypto_sign_keypair(
   outputFormat?: Uint8ArrayOutputFormat | StringOutputFormat | null
 ): KeyPair | StringKeyPair {
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoSignKeyPair();
@@ -201,7 +225,11 @@ export function crypto_sign_detached(
   if (typeof message === "string") {
     throw new Error("string message not supported");
   }
-  if (outputFormat !== "uint8array") {
+  if (
+    outputFormat === "hex" ||
+    outputFormat === "base64" ||
+    outputFormat === "text"
+  ) {
     throw new Error("StringOutputFormat not supported");
   }
   return cryptoSignDetached({
