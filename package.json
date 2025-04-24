@@ -1,6 +1,6 @@
 {
   "name": "@serenity-kit/noble-sodium",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript library offering a Libsodium-compatible API built on top of Noble packages",
   "repository": "https://github.com/serenity-kit/noble-sodium",
   "type": "module",
@@ -26,7 +26,8 @@
     "dist/**/*.d.ts.map"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./wrappers": "./dist/wrappers.js"
   },
   "sideEffects": false,
   "author": "Naisho GmbH",

@@ -52,6 +52,16 @@ For more examples see the [tests](./test/).
 - `cryptoBoxSeal` -> `crypto_box_seal`
 - `cryptoBoxSealOpen` -> `crypto_box_seal_open`
 
+## Drop-in replacement for `libsodium-wrappers`
+
+As an alternative to the root export, the library exports a `wrappers` module that is a drop-in replacement for `libsodium-wrappers`. Keep in mind that not yet all functionality e.g. `outputFormat` as `"hex"` is available. Feel free to open a PR or an issue if you need certain functionality.
+
+```ts
+import * as sodium from "@serenity-kit/noble-sodium/wrappers";
+
+const keypair = sodium.crypto_box_keypair();
+```
+
 ## Notable findings
 
 - `crypto_box_easy` does a hsalsa on the shared secret and then uses the result as key for the box
